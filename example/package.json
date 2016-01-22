@@ -1,0 +1,27 @@
+{
+  "name": "gulp-tjutils-example",
+  "version": "0.1.0",
+  "description": "gulp-tjutils Example",
+  "license": "BSD-2-Clause",
+  "private": true,
+  "scripts": {
+    "postinstall": "tsd install",
+    "start": "gulp",
+    "serve": "gulp serve",
+    "update": "tsd update --overwrite --save"
+  },
+  "devDependencies": {
+    "gulp": "github:gulpjs/gulp#4.0",
+    "tsd": "0.6.5",
+    "typescript": "1.8.0-dev.20160105"
+  },
+  "dependencies": {
+    "angular": "1.5.0-rc.1",
+    "angular-animate": "1.5.0-rc.1",
+    "angular-aria": "1.5.0-rc.1",
+    "angular-material": "1.0.2",
+    "angular-messages": "1.5.0-rc.1",
+    "roboto-fontface": "0.4.2",
+    "systemjs": "0.19.16"
+  }
+}
