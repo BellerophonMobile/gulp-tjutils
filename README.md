@@ -8,3 +8,5 @@ Quick Start
 -----------
 
     npm install --save-dev --save-exact gulp-tjutils
+
+See `example` for a simple Angular/TypeScript site.
