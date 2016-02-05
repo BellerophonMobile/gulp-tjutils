@@ -3,13 +3,13 @@
 //// IMPORTS
 
 // Create a BrowserSync instance for the other modules to use.
-var browserSync = require('browser-sync').create('server'),
-    ansiUp = require('ansi_up'),
-    util = require('util');
+var browserSync = require('browser-sync').create('server');
+
+var ansiUp = require('ansi_up'),
+    util   = require('util');
 
 var clean      = require('./lib/clean'),
     concat     = require('./lib/concat'),
-    config     = require('./lib/config'),
     copy       = require('./lib/copy'),
     html       = require('./lib/html'),
     images     = require('./lib/images'),
@@ -21,6 +21,7 @@ var clean      = require('./lib/clean'),
 
 //// FUNCTIONS
 
+// notifyError sends a message to both the console, and the browser.
 browserSync.notifyError = function (msg) {
   if (Array.isArray(msg)) {
     msg.forEach(m => console.log(m));
@@ -34,15 +35,16 @@ browserSync.notifyError = function (msg) {
   }
 
   msg = msg.replace(/\n/g, '<br>');
-  browserSync.notify(ansiUp.ansi_to_html(msg), config.notifyTimeout);
+  browserSync.notify(ansiUp.ansi_to_html(msg), module.exports.notifyTimeout);
 };
 
 //// EXPORTS
 
 module.exports = {
+  notifyTimeout: 30000,
+
   clean:      clean,
   concat:     concat,
-  config:     config,
   copy:       copy,
   html:       html,
   images:     images,
